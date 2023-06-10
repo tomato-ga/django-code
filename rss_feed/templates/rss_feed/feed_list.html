@@ -1,0 +1,15 @@
+# /code/rss_feed/templates/rss_feed/feed_list.html
+
+{% extends "base_generic.html" %} <!-- ベーステンプレート. プロジェクトに応じて変更すること -->
+
+{% block content %}
+<h2>RSS Feed</h2>
+<ul>
+    {% for feed in object_list %}
+    <li>
+        <a href="{{ feed.link }}">{{ feed.title }}</a>
+        <!-- 必要に応じて他のフィールドも表示 -->
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

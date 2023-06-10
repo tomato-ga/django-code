@@ -1,0 +1,5 @@
+.env
+mysql
+.sql
+*.pyc
+*.sqlite3
