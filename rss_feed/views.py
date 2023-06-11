@@ -2,7 +2,7 @@ from django.core.management import call_command
 from django.http import HttpResponse
 from django.views import View
 from django.views.generic import ListView
-from .models import Feed
+from .models import FeedSource
 
 class FetchRSS(View):
     def get(self, request, *args, **kwargs):
@@ -10,5 +10,6 @@ class FetchRSS(View):
         return HttpResponse('RSS feed fetched successfully')
 
 class FeedList(ListView):
-    model = Feed
-    template_name = 'rss_feed/feed_list.html'  # 使用するテンプレート
+    model = FeedSource
+    template_name = 'rss_feed/feed_list.html'
+    context_object_name = 'feed_sources'

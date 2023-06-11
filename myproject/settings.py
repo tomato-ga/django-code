@@ -89,6 +89,10 @@ DATABASES = {
         'PASSWORD': 'django',  # .envに定義したMySQLのパスワードに変更
         'HOST': 'db',
         'PORT': '3306',
+        'OPTIONS': {
+            'charset': 'utf8mb4',
+            'use_unicode': True, 
+        },
     }
 }
 
